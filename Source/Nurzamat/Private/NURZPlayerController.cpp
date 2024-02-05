@@ -24,7 +24,6 @@ void ANURZPlayerController::OnPossess(APawn* InPawn)
 		if (ANURZCharacter* NurzChar = Cast< ANURZCharacter>(InPawn)) {
 			NurzChar->AbilitySystemComponent = PS->GetAbilitySystemComponent();
 			NurzChar->AbilitySystemComponent->InitAbilityActorInfo(NurzChar, NurzChar);
-			NurzChar->GiveAbilities();
 			NurzChar->InitializeAttributes();
 		}
 	}
@@ -46,10 +45,17 @@ void ANURZPlayerController::AcknowledgePossession(APawn* P)
 		if (ANURZCharacter* NurzChar = Cast< ANURZCharacter>(P)) {
 			NurzChar->AbilitySystemComponent = PS->GetAbilitySystemComponent();
 			NurzChar->AbilitySystemComponent->InitAbilityActorInfo(NurzChar, NurzChar);
-			NurzChar->GiveAbilities();
+
 			NurzChar->InitializeAttributes();
 		}
 	}
 
 	
+}
+
+void ANURZPlayerController::BeginPlay()
+{
+	Super::BeginPlay();
+	ANURZCharacter* NurzChar = Cast< ANURZCharacter>(GetPawn());
+	NurzChar->GiveAbilities();
 }

@@ -17,7 +17,6 @@ void UWeaponComponent::ChangeWeapon()
 
 void UWeaponComponent::ChangeWeaponMult_Implementation()
 {
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::White, TEXT("123"));
 	CurrentWeaponIndex = (CurrentWeaponIndex + 1) % Weapons.Num();
 	EquipWeapon(CurrentWeaponIndex);
 }
