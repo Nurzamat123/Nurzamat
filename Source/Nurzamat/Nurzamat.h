@@ -16,6 +16,4 @@ enum class ENURZAbilityInputID : uint8
 	Change,
 	Reload,
 	AutoReload
-
-	
 };

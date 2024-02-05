@@ -12,7 +12,6 @@ void ANURZPlayerController::DieHero()
 {
 	ANURZCharacter* Hero = Cast<ANURZCharacter>(GetPawn());
 	Hero->Die();
-	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Destroy"));
 }
 
 void ANURZPlayerController::OnPossess(APawn* InPawn)

@@ -44,29 +44,23 @@ float ANURZPlayerState::GetMaxHealth() const
 
 void ANURZPlayerState::BeginPlay()
 {
-	//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("2"));
 	Super::BeginPlay();
 	if (AbilitySystemComponent)
 	{
 			AttributeSet->OnAttHealthChangedDel.AddUObject(this, &ANURZPlayerState::HealthChanged);
 	}
-
-	//HealthChanged(GetHealth());
 }
 
 void ANURZPlayerState::HealthChanged(float AttHealth)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("VALIID"));
 	ANURZPlayerController* PC = Cast<ANURZPlayerController>(GetPlayerController());
 	if (PC && AttHealth <= 0.0f)
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("KKKK"));
 		PC->DieHero();
 	}
 	else if (PC) 
 	{
 		PC->AttHealthChDel.Broadcast(AttHealth);
-		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Broadcast"));
 	}
 
 
