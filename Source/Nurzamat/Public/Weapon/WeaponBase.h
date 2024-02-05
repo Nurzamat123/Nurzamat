@@ -30,8 +30,6 @@ class NURZAMAT_API AWeaponBase : public AActor
 public:	
 	AWeaponBase();
 
-	virtual void Fire();
-
 	//Getter for WeaponMesh
 	USkeletalMeshComponent* GetWeaponMesh()const;
 

@@ -19,7 +19,6 @@ void UNURZAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Ou
 void UNURZAttributeSet::OnRep_Health(const FGameplayAttributeData& OldHealth)
 {
 	GAMEPLAYATTRIBUTE_REPNOTIFY(UNURZAttributeSet, Health, OldHealth);
-	//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("12"));
 	OnAttHealthChangedDel.Broadcast(GetHealth());
 }
 

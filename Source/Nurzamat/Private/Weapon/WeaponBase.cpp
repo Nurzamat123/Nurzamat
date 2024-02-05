@@ -14,12 +14,6 @@ AWeaponBase::AWeaponBase()
 	SetRootComponent(WeaponMesh);
 }
 
-void AWeaponBase::Fire()
-{
-
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("FIRE"));
-}
-
 USkeletalMeshComponent* AWeaponBase::GetWeaponMesh() const
 {
 	return WeaponMesh;
