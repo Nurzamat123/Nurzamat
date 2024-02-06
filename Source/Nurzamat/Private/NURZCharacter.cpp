@@ -39,6 +39,8 @@ void ANURZCharacter::Die()
 {
 	Super::Destroyed();
 	WeaponComponent->DestroyComponent();
+
+	AbilitySystemComponent->ClearAllAbilities();
 }
 
 class UAbilitySystemComponent* ANURZCharacter::GetAbilitySystemComponent() const
