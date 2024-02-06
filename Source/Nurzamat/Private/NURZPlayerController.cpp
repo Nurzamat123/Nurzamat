@@ -54,8 +54,3 @@ void ANURZPlayerController::AcknowledgePossession(APawn* P)
 	}
 }
 
-void ANURZPlayerController::BeginPlay()
-{
-	Super::BeginPlay();
-
-}

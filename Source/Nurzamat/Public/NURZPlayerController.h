@@ -31,5 +31,4 @@ protected:
 	virtual void OnPossess(APawn* InPawn)override;
 	virtual void OnRep_PlayerState()override;
 	void AcknowledgePossession(APawn* P)override;
-	virtual void BeginPlay()override;
 };
