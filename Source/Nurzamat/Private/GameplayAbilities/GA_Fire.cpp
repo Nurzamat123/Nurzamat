@@ -27,11 +27,11 @@ void UGA_Fire::ActivateAbility(const FGameplayAbilitySpecHandle Handle, const FG
 	{
 		EndAbility(CurrentSpecHandle, CurrentActorInfo, CurrentActivationInfo, true, true);
 	}
-	//UAnimMontage* MontageToPlay = FireHipMontage;
-	//if (GetAbilitySystemComponentFromActorInfo()->HasMatchingGameplayTag(FGameplayTag::RequestGameplayTag(FName("Ability.ADS"))))
-	//{
-	//	MontageToPlay = FireADSMontage;
-	//}
+	UAnimMontage* MontageToPlay = FireHipMontage;
+	if (GetAbilitySystemComponentFromActorInfo()->HasMatchingGameplayTag(FGameplayTag::RequestGameplayTag(FName("Ability.ADS"))))
+	{
+		MontageToPlay = FireADSMontage;
+	}
 	FireProjectile();
 
 }
